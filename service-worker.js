@@ -1,4 +1,4 @@
-const CACHE = 'adiyogi-v3';
+const CACHE = 'adiyogi-v4';
 const BASE  = self.registration.scope;
 const OFFLINE = BASE + 'offline.html';
 
