@@ -299,55 +299,6 @@ Used by elite athletes, trauma therapists, and ancient shamans alike, visualizat
     gifAlt: 'Serene natural landscape visualization',
     tip: 'Visit the same sanctuary each time. The more you return, the more real and powerful it becomes—your brain builds a neural home base for peace.'
   }
-{
-  id: 'guided-meditation',
-  title: 'Guided Meditation',
-  subtitle: 'Voice-Led Awareness',
-  emoji: '🎧',
-  color: '#81c784',
-  colorDark: '#388e3c',
-  gradient: 'linear-gradient(135deg, #134e5e, #71b280)',
-  category: 'Beginner',
-  tagline: 'Let a voice guide your mind into calm and clarity',
-  shortDesc: 'Follow a guided voice that leads your attention step-by-step into relaxation, awareness, and inner stillness.',
-  description: `Guided Meditation is one of the most accessible and beginner-friendly meditation styles. Instead of relying solely on self-discipline, you follow a structured set of instructions delivered through audio or video.
-
-The guide acts as an external anchor for your attention—directing your awareness to breath, body, or visualizations. This reduces mental effort and makes it easier to stay present, especially for beginners or those with a busy mind.
-
-Over time, guided meditation helps train your ability to focus, relax deeply, and observe thoughts without getting caught in them.`,
-  
-  steps: [
-    'Find a quiet and comfortable place where you won’t be disturbed.',
-    'Sit or lie down in a relaxed position with your spine neutral.',
-    'Put on headphones for better immersion (recommended).',
-    'Start the guided meditation audio or video.',
-    'Gently close your eyes and begin following the voice instructions.',
-    'Bring your attention to wherever the guide directs—breath, body, or visualization.',
-    'If your mind wanders, simply return to the voice without frustration.',
-    'Allow yourself to relax deeper as the session progresses.',
-    'At the end, slowly bring awareness back and open your eyes.'
-  ],
-
-  benefits: [
-    'Very easy for beginners to start',
-    'Reduces overthinking and mental noise',
-    'Promotes deep relaxation',
-    'Improves sleep quality',
-    'Builds meditation habit faster',
-    'Helps with stress and anxiety'
-  ],
-
-  durations: [
-    { time: 5, label: '5 min', description: 'Quick relaxation break' },
-    { time: 10, label: '10 min', description: 'Daily calm session' },
-    { time: 20, label: '20 min', description: 'Deep guided experience' }
-  ],
-
-  gifUrl: 'https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif',
-  gifAlt: 'Person meditating with headphones in calm environment',
-
-  tip: 'Don’t just hear the guide—actively follow it. Your engagement determines the depth of the experience.'
-}
 ];
 
 // Make available globally
