@@ -114,19 +114,31 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 .hero-orb {
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  animation: orb-pulse 4s ease-in-out infinite;
 }
 
-.hero-orb-img {{ font-size: 3rem; }
+.hero-orb-img {
+  width: 70%;
+  height: auto;
+}
+
 @keyframes orb-pulse {
-  0%,100% { box-shadow: 0 0 28px var(--glow); }
-  50%      { box-shadow: 0 0 52px var(--glow); transform: scale(1.03); }
+  0%, 100% {
+    box-shadow: 0 0 28px var(--glow);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 52px var(--glow);
+    transform: scale(1.03);
+  }
 }
 .hero-eyebrow {
   font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
