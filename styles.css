@@ -123,10 +123,10 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-.hero-orb-img {
-  width: 70%;
-  height: auto;
-  object-fit: contain;
+.hero-orb-img {{ font-size: 3rem; }
+@keyframes orb-pulse {
+  0%,100% { box-shadow: 0 0 28px var(--glow); }
+  50%      { box-shadow: 0 0 52px var(--glow); transform: scale(1.03); }
 }
 .hero-orb-emoji { font-size: 3rem; }
 @keyframes orb-pulse {
