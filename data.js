@@ -299,161 +299,54 @@ Used by elite athletes, trauma therapists, and ancient shamans alike, visualizat
     gifAlt: 'Serene natural landscape visualization',
     tip: 'Visit the same sanctuary each time. The more you return, the more real and powerful it becomes—your brain builds a neural home base for peace.'
   }
-   {
+{
   id: 'guided-meditation',
   title: 'Guided Meditation',
-  subtitle: 'Voice-Led Awareness & Deep Relaxation',
+  subtitle: 'Voice-Led Awareness',
   emoji: '🎧',
   color: '#81c784',
   colorDark: '#388e3c',
   gradient: 'linear-gradient(135deg, #134e5e, #71b280)',
   category: 'Beginner',
-  difficulty: 'Very Easy',
-  tagline: 'Follow the voice. Enter stillness without effort.',
+  tagline: 'Let a voice guide your mind into calm and clarity',
+  shortDesc: 'Follow a guided voice that leads your attention step-by-step into relaxation, awareness, and inner stillness.',
+  description: `Guided Meditation is one of the most accessible and beginner-friendly meditation styles. Instead of relying solely on self-discipline, you follow a structured set of instructions delivered through audio or video.
+
+The guide acts as an external anchor for your attention—directing your awareness to breath, body, or visualizations. This reduces mental effort and makes it easier to stay present, especially for beginners or those with a busy mind.
+
+Over time, guided meditation helps train your ability to focus, relax deeply, and observe thoughts without getting caught in them.`,
   
-  shortDesc: 'A structured, voice-guided meditation that leads your attention step-by-step into relaxation, awareness, and mental clarity—ideal for beginners and restless minds.',
-
-  description: `Guided Meditation is a structured attentional training method where an external narrator (audio/video) directs your awareness through specific mental and physiological states. Unlike unguided practices that require strong internal discipline, guided meditation reduces cognitive load by outsourcing attentional control.
-
-This makes it highly effective for beginners, individuals with high cognitive noise (overthinking), or those dealing with stress, anxiety, or sleep disturbances.
-
-From a neuroscience perspective, guided meditation helps deactivate the Default Mode Network (DMN)—the brain system responsible for mind-wandering and self-referential thinking—while activating regions associated with focused attention and emotional regulation.
-
-The guide's voice acts as a dynamic anchor, continuously redirecting your awareness to breath, body sensations, or visualization, preventing prolonged distraction loops.
-
-Over time, repeated guided sessions train meta-awareness (awareness of awareness), improve attentional stability, and condition the nervous system toward parasympathetic dominance (rest-and-digest state).`,
-
-  phases: [
-    {
-      name: 'Arrival (1–2 min)',
-      purpose: 'Transition from external activity to internal awareness',
-      details: 'Slow breathing, posture adjustment, initial grounding'
-    },
-    {
-      name: 'Attention Anchoring (2–5 min)',
-      purpose: 'Stabilize awareness using breath/body',
-      details: 'Guide directs focus to breathing patterns or sensations'
-    },
-    {
-      name: 'Deepening (5–10 min)',
-      purpose: 'Reduce mental activity and induce relaxation',
-      details: 'Progressive relaxation, slower instructions, longer pauses'
-    },
-    {
-      name: 'Expansion / Visualization (optional)',
-      purpose: 'Enhance emotional or cognitive state',
-      details: 'Imagery (light, nature, success, healing)'
-    },
-    {
-      name: 'Return (1–2 min)',
-      purpose: 'Reintegration into normal awareness',
-      details: 'Gradual return to surroundings and body awareness'
-    }
-  ],
-
   steps: [
-    'Choose a quiet, interruption-free environment with minimal sensory input.',
-    'Sit upright (alert) or lie down (for relaxation/sleep sessions).',
-    'Use headphones to enhance immersion and reduce external noise.',
-    'Start a guided meditation audio track.',
-    'Close your eyes and consciously shift from external to internal awareness.',
-    'Follow each instruction precisely—breath focus, body awareness, or visualization.',
-    'When distraction occurs, re-engage with the guide’s voice immediately.',
-    'Allow your breathing to slow naturally—do not force rhythm.',
-    'Notice physical relaxation spreading across muscles and joints.',
-    'Observe thoughts as background events while prioritizing the guide.',
-    'At session end, gradually deepen breath and reawaken sensory awareness.'
+    'Find a quiet and comfortable place where you won’t be disturbed.',
+    'Sit or lie down in a relaxed position with your spine neutral.',
+    'Put on headphones for better immersion (recommended).',
+    'Start the guided meditation audio or video.',
+    'Gently close your eyes and begin following the voice instructions.',
+    'Bring your attention to wherever the guide directs—breath, body, or visualization.',
+    'If your mind wanders, simply return to the voice without frustration.',
+    'Allow yourself to relax deeper as the session progresses.',
+    'At the end, slowly bring awareness back and open your eyes.'
   ],
-
-  guidedScriptSample: `Close your eyes...
-Take a slow, deep breath in... and gently exhale.
-Bring your attention to the natural rhythm of your breathing.
-Notice the air entering through your nose... and leaving your body.
-
-If your mind wanders, that’s okay.
-Simply return to the sound of my voice.
-
-Now, relax your shoulders...
-Release any tension in your face...
-Let your body become heavy and supported.
-
-Imagine a calm, peaceful place...
-A space where you feel completely safe and relaxed...
-
-Stay here for a few moments... just breathing... just being...`,
 
   benefits: [
-    'Reduces Default Mode Network (DMN) overactivity (less overthinking)',
-    'Rapid stress reduction via parasympathetic activation',
-    'Improves sleep latency and quality',
-    'Enhances attentional control without mental strain',
-    'Builds consistent meditation habit faster than unguided methods',
-    'Improves emotional regulation and resilience',
-    'Useful for anxiety, burnout, and cognitive fatigue',
-    'Facilitates deep relaxation states (alpha/theta brainwaves)'
-  ],
-
-  useCases: [
-    'Before sleep (insomnia relief)',
-    'Morning mental clarity',
-    'Stress recovery after work/study',
-    'Anxiety calming sessions',
-    'Break-time reset during study'
+    'Very easy for beginners to start',
+    'Reduces overthinking and mental noise',
+    'Promotes deep relaxation',
+    'Improves sleep quality',
+    'Builds meditation habit faster',
+    'Helps with stress and anxiety'
   ],
 
   durations: [
-    { time: 3, label: '3 min', description: 'Ultra quick reset' },
-    { time: 5, label: '5 min', description: 'Beginner entry session' },
-    { time: 10, label: '10 min', description: 'Daily standard practice' },
-    { time: 15, label: '15 min', description: 'Deeper relaxation' },
-    { time: 20, label: '20 min', description: 'Full guided experience' },
-    { time: 30, label: '30 min', description: 'Advanced immersion' }
-  ],
-
-  variations: [
-    'Body Scan Guided Meditation',
-    'Sleep Guided Meditation',
-    'Visualization Guided Meditation',
-    'Anxiety Relief Guided Session',
-    'Focus/Study Guided Meditation'
-  ],
-
-  comparison: {
-    vsFocusedAttention: 'Less effort required; external guidance replaces self-discipline',
-    vsMindfulness: 'More structured; less open-ended awareness',
-    vsMantra: 'Dynamic instructions vs repetitive anchor'
-  },
-
-  commonMistakes: [
-    'Listening passively instead of actively following instructions',
-    'Expecting instant silence of thoughts',
-    'Using it in a noisy or distracting environment',
-    'Falling asleep unintentionally (unless goal is sleep)',
-    'Switching sessions too frequently without consistency'
-  ],
-
-  environmentSetup: {
-    lighting: 'Dim or dark',
-    sound: 'Headphones recommended',
-    posture: 'Stable and comfortable',
-    distractions: 'Phone on silent / airplane mode'
-  },
-
-  progressionPath: [
-    'Start with guided meditation (Week 1–2)',
-    'Combine with breath awareness (Week 3)',
-    'Transition to partial silence (Week 4)',
-    'Move toward unguided meditation (advanced stage)'
+    { time: 5, label: '5 min', description: 'Quick relaxation break' },
+    { time: 10, label: '10 min', description: 'Daily calm session' },
+    { time: 20, label: '20 min', description: 'Deep guided experience' }
   ],
 
   gifUrl: 'https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif',
-  gifAlt: 'Person in deep guided meditation with headphones',
+  gifAlt: 'Person meditating with headphones in calm environment',
 
-  tip: 'Engagement is everything. The deeper you follow the guide, the deeper your state. Passive listening = weak results.',
-
-  advancedTip: 'After 2–3 weeks, reduce dependency on the guide gradually to build internal attention control.',
-
-  warning: 'If you feel excessive sleepiness, try sitting posture instead of lying down.'
+  tip: 'Don’t just hear the guide—actively follow it. Your engagement determines the depth of the experience.'
 }
 ];
 
