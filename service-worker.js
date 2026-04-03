@@ -1,11 +1,11 @@
-const CACHE = 'adiyogi-v2';
+const CACHE = 'adiyogi-v3';
 const BASE  = self.registration.scope;
 const OFFLINE = BASE + 'offline.html';
 
 const PRECACHE = [
-  '', 'index.html', 'techniques.html', 'technique-detail.html',
-  'about.html', 'offline.html', 'styles.css', 'app.js', 'data.js',
-  'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'
+  '',"./" './index.html', './techniques.html', './technique-detail.html',
+  './about.html', './offline.html', './styles.css', './app.js', './data.js',
+  './manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'
 ].map(f => BASE + f);
 
 self.addEventListener('install', e => {
