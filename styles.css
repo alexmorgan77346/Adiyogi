@@ -114,6 +114,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 .hero-orb {
+  padding: 20px 0 20px;
   width: 250px;
   height: 250px;
   border-radius: 50%;
