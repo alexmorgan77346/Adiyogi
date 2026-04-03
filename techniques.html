@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Browse all 7 meditation techniques.">
+  <meta name="theme-color" content="#090910">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Techniques — ADIYOGI</title>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="logo" href="index.html"><span class="logo-dot"></span>ADIYOGI</a>
+    <button class="icon-btn" data-action="toggle-theme" aria-label="Toggle theme">
+      <span class="theme-dark">☀️</span><span class="theme-light" style="display:none">🌙</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="page">
+
+    <section style="padding:28px 0 18px">
+      <p class="sec-label">All Practices</p>
+      <h1 class="sec-title">Techniques</h1>
+      <p class="sec-sub">Seven pathways. Start anywhere. Return often.</p>
+    </section>
+
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="searchInput" placeholder="Search…" aria-label="Search techniques">
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="pill active" data-f="all">All</button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="hidden" id="empty" style="text-align:center;padding:48px 0;color:var(--dim)">
+      <div style="font-size:2.5rem;margin-bottom:10px">🔍</div>
+      <p style="font-size:0.86rem">No results found.</p>
+    </div>
+
+    <div style="height:12px"></div>
+
+  </div>
+</main>
+
+<nav class="nav">
+  <div class="nav-list">
+    <a href="index.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Home
+    </a>
+    <a href="techniques.html" class="nav-item active">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Techniques
+    </a>
+    <a href="about.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+      About
+    </a>
+  </div>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('grid');
+  const filtersEl = document.getElementById('filters');
+  const searchEl = document.getElementById('searchInput');
+  const empty = document.getElementById('empty');
+
+  // Build filter pills
+  [...new Set(TECHNIQUES.map(t => t.category))].forEach(cat => {
+    const b = document.createElement('button');
+    b.className = 'pill'; b.dataset.f = cat; b.textContent = cat;
+    filtersEl.appendChild(b);
+  });
+
+  let active = 'all', query = '';
+
+  function render() {
+    const list = TECHNIQUES.filter(t => {
+      const mf = active === 'all' || t.category === active;
+      const q = query.toLowerCase();
+      const ms = !q || t.title.toLowerCase().includes(q) || t.subtitle.toLowerCase().includes(q);
+      return mf && ms;
+    });
+    empty.classList.toggle('hidden', list.length > 0);
+    grid.innerHTML = list.map(t => `
+      <a href="technique-detail.html?id=${t.id}" class="card reveal">
+        <div class="card-thumb" style="background:${t.gradient}">
+          <span>${t.emoji}</span>
+          <span class="card-tag">${t.category}</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">${t.title}</div>
+          <div class="card-sub">${t.subtitle}</div>
+          <div class="card-chips">
+            ${t.durations.slice(0,2).map(d=>`<span class="chip">${d.label}</span>`).join('')}
+          </div>
+        </div>
+      </a>`).join('');
+    // Re-trigger reveals
+    requestAnimationFrame(() => {
+      grid.querySelectorAll('.reveal').forEach(el => {
+        new IntersectionObserver(([e],o)=>{ if(e.isIntersecting){el.classList.add('visible');o.disconnect();} },{threshold:0.05}).observe(el);
+      });
+    });
+  }
+
+  filtersEl.addEventListener('click', e => {
+    const p = e.target.closest('.pill'); if (!p) return;
+    filtersEl.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    active = p.dataset.f;
+    render();
+  });
+
+  searchEl.addEventListener('input', e => { query = e.target.value; render(); });
+
+  render();
+});
+</script>
+</body>
+</html>

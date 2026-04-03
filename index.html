@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="ADIYOGI — A quiet space for daily mindfulness practice.">
+  <meta name="theme-color" content="#090910">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ADIYOGI">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>ADIYOGI</title>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="logo" href="index.html"><span class="logo-dot"></span>ADIYOGI</a>
+    <button class="icon-btn" data-action="toggle-theme" aria-label="Toggle theme">
+      <span class="theme-dark">☀️</span><span class="theme-light" style="display:none">🌙</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="page">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-orb"><span class="hero-orb-emoji">🧘</span></div>
+      <p class="hero-eyebrow">Daily Practice</p>
+      <h1 class="hero-title">Still the <em>mind.</em></h1>
+      <p class="hero-sub">Seven ancient techniques. A simple timer. One quiet moment that changes everything.</p>
+      <a href="techniques.html" class="btn btn-primary">Begin →</a>
+    </section>
+
+    <!-- Install banner -->
+    <div class="ib hidden" id="installBanner">
+      <div style="font-size:1.5rem;flex-shrink:0">📱</div>
+      <div class="ib-text">
+        <div class="ib-title">Install ADIYOGI</div>
+        <div class="ib-desc">Works offline · No app store needed</div>
+      </div>
+      <button class="btn btn-primary" style="padding:8px 16px;font-size:0.8rem" id="installBtn">Install</button>
+      <button class="ib-close" id="installClose">✕</button>
+    </div>
+
+    <!-- Featured 4 -->
+    <section style="padding:8px 0 32px">
+      <p class="sec-label">Techniques</p>
+      <h2 class="sec-title">Where to begin</h2>
+      <p class="sec-sub">Start with breath. Add one practice at a time.</p>
+      <div class="grid" id="featuredGrid"></div>
+      <div style="text-align:center;margin-top:18px">
+        <a href="techniques.html" class="btn btn-ghost">All 7 techniques →</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<nav class="nav">
+  <div class="nav-list">
+    <a href="index.html" class="nav-item active">
+      <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Home
+    </a>
+    <a href="techniques.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Techniques
+    </a>
+    <a href="about.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+      About
+    </a>
+  </div>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('featuredGrid');
+  if (!grid || !TECHNIQUES) return;
+  grid.innerHTML = TECHNIQUES.slice(0, 4).map(t => `
+    <a href="technique-detail.html?id=${t.id}" class="card">
+      <div class="card-thumb" style="background:${t.gradient}">
+        <span>${t.emoji}</span>
+        <span class="card-tag">${t.category}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">${t.title}</div>
+        <div class="card-sub">${t.subtitle}</div>
+        <div class="card-chips">
+          ${t.durations.slice(0,2).map(d=>`<span class="chip">${d.label}</span>`).join('')}
+        </div>
+      </div>
+    </a>`).join('');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#090910">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Offline — ADIYOGI</title>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="logo" href="index.html"><span class="logo-dot"></span>ADIYOGI</a>
+  </div>
+</header>
+
+<main>
+  <div class="offline-wrap">
+    <div class="offline-icon">🌙</div>
+    <h1 class="offline-title">You're offline</h1>
+    <p class="offline-desc">Cached content is still available. Return to the app and continue your practice.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+      <a href="index.html" class="btn btn-primary">← Back</a>
+      <button class="btn btn-ghost" onclick="location.reload()">Retry</button>
+    </div>
+  </div>
+</main>
+
+<nav class="nav">
+  <div class="nav-list">
+    <a href="index.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Home
+    </a>
+    <a href="techniques.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Techniques
+    </a>
+    <a href="about.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+      About
+    </a>
+  </div>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>

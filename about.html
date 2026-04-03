@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="About ADIYOGI.">
+  <meta name="theme-color" content="#090910">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>About — ADIYOGI</title>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="logo" href="index.html"><span class="logo-dot"></span>ADIYOGI</a>
+    <button class="icon-btn" data-action="toggle-theme" aria-label="Toggle theme">
+      <span class="theme-dark">☀️</span><span class="theme-light" style="display:none">🌙</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="page">
+
+    <section style="padding:32px 0 20px;text-align:center" class="reveal">
+      <div style="font-size:3rem;margin-bottom:16px">🧘</div>
+      <h1 class="sec-title">About</h1>
+      <p class="sec-sub">A free, private, offline-first mindfulness app for everyone.</p>
+    </section>
+
+    <div class="a-block reveal">
+      <p class="a-block-title">The App</p>
+      <div class="a-row">
+        <span class="a-icon">📡</span>
+        <div><div class="a-title">Works offline</div><div class="a-desc">Service worker caches everything. Meditate on a plane, in the mountains, anywhere.</div></div>
+      </div>
+      <div class="a-row">
+        <span class="a-icon">🔒</span>
+        <div><div class="a-title">No account, no tracking</div><div class="a-desc">Your practice is yours. Nothing is collected or stored remotely.</div></div>
+      </div>
+      <div class="a-row">
+        <span class="a-icon">📱</span>
+        <div><div class="a-title">Installable PWA</div><div class="a-desc">Add to home screen from any browser. Behaves like a native app.</div></div>
+      </div>
+      <div class="a-row">
+        <span class="a-icon">⚡</span>
+        <div><div class="a-title">No frameworks</div><div class="a-desc">Pure HTML, CSS, and JS. Fast on any device, any connection.</div></div>
+      </div>
+    </div>
+
+    <div class="a-block reveal">
+      <p class="a-block-title">The 7 Techniques</p>
+      <div id="techList"></div>
+    </div>
+
+    <div class="a-block reveal">
+      <p class="a-block-title">The Science</p>
+      <div class="a-row">
+        <span class="a-icon">🧠</span>
+        <div><div class="a-title">Neuroplasticity</div><div class="a-desc">Regular practice grows gray matter in the prefrontal cortex and shrinks the amygdala.</div></div>
+      </div>
+      <div class="a-row">
+        <span class="a-icon">💓</span>
+        <div><div class="a-title">Stress reduction</div><div class="a-desc">MBSR clinical trials show measurable reduction in cortisol, anxiety, and depression.</div></div>
+      </div>
+      <div class="a-row">
+        <span class="a-icon">🎯</span>
+        <div><div class="a-title">Focus & attention</div><div class="a-desc">Eight weeks of daily practice improves sustained attention and working memory.</div></div>
+      </div>
+    </div>
+
+    <div class="a-block reveal" style="text-align:center">
+      <p style="font-size:1.8rem;margin-bottom:12px">📲</p>
+      <p style="font-size:0.88rem;font-weight:500;margin-bottom:4px">Install ADIYOGI</p>
+      <p style="font-size:0.76rem;color:var(--muted);margin-bottom:16px;line-height:1.55">No app store. Works offline. Free forever.</p>
+      <button class="btn btn-primary btn-full" onclick="window.installApp()">Add to Home Screen</button>
+    </div>
+
+    <div style="height:12px"></div>
+
+  </div>
+</main>
+
+<nav class="nav">
+  <div class="nav-list">
+    <a href="index.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Home
+    </a>
+    <a href="techniques.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Techniques
+    </a>
+    <a href="about.html" class="nav-item active">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+      About
+    </a>
+  </div>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const list = document.getElementById('techList');
+  if (!list) return;
+  list.innerHTML = TECHNIQUES.map(t => `
+    <div class="a-row">
+      <span class="a-icon">${t.emoji}</span>
+      <div>
+        <div class="a-title"><a href="technique-detail.html?id=${t.id}" style="color:var(--accent)">${t.title}</a></div>
+        <div class="a-desc">${t.shortDesc.split('.')[0]}.</div>
+      </div>
+    </div>`).join('');
+});
+</script>
+</body>
+</html>
