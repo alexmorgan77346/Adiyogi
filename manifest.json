@@ -2,7 +2,7 @@
   "name": "ADIYOGI",
   "short_name": "ADIYOGI",
   "description": "Your daily sanctuary for mindfulness and meditation.",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#08080f",
