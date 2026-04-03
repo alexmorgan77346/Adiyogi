@@ -128,11 +128,6 @@ img { max-width: 100%; display: block; }
   0%,100% { box-shadow: 0 0 28px var(--glow); }
   50%      { box-shadow: 0 0 52px var(--glow); transform: scale(1.03); }
 }
-.hero-orb-emoji { font-size: 3rem; }
-@keyframes orb-pulse {
-  0%,100% { box-shadow: 0 0 28px var(--glow); }
-  50%      { box-shadow: 0 0 52px var(--glow); transform: scale(1.03); }
-}
 .hero-eyebrow {
   font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 12px; font-weight: 500;
